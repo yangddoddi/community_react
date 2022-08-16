@@ -13,7 +13,7 @@ function App() {
     testAxios("test", findIp);
   }, []);
 
-  return <div className="App">{ip}</div>;
+  return <div className="App">{ip}에 연결 성공!</div>;
 }
 
 export default App;
