@@ -1,0 +1,79 @@
+import { Layout, Menu } from "antd";
+import "antd/dist/antd.css";
+import "./App.scss";
+import React from "react";
+import styled from "styled-components";
+import { Posts } from "./pages/Posts";
+const { Header, Content, Footer, Sider } = Layout;
+
+const LayoutStyled = styled(Layout)`
+  height: 100%;
+`;
+
+const ContentStyled = styled(Content)`
+  height: 100%;
+  margin: "24px 16px 0";
+`;
+
+const MenuStyled = styled(Menu)`
+  padding-top: 60px;
+`;
+
+const HeaderStyled = styled(Header)`
+  padding: 0;
+`;
+
+const App = () => {
+  const items = [
+    { label: "notice", key: "1" },
+    { label: "board", key: "2" },
+    { label: "board", key: "3" },
+    { label: "board", key: "4" },
+  ];
+
+  return (
+    <LayoutStyled>
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >
+        <div className="logo" />
+        <MenuStyled
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={["1"]}
+          items={items}
+        />
+      </Sider>
+      <Layout>
+        <HeaderStyled className="site-layout-sub-header-backgrond" />
+        <ContentStyled>
+          <div
+            className="site-layout-background"
+            style={{
+              padding: 24,
+              minHeight: 360,
+            }}
+          >
+            <Posts />
+          </div>
+        </ContentStyled>
+        <Footer
+          style={{
+            textAlign: "center",
+          }}
+        >
+          Yang eun chan @ 2022
+        </Footer>
+      </Layout>
+    </LayoutStyled>
+  );
+};
+
+export default App;
