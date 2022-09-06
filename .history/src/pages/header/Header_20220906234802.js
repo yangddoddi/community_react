@@ -1,8 +1,23 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: no;
+  }
+`;
 
 export const Header = () => {
   const logoutHandler = () => {
@@ -20,24 +35,27 @@ export const Header = () => {
             <Nav.Link as={Link} to="/" className="header_title">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/posts/notice" className="header_title">
-              Notice
+            <Nav.Link>
+              <StyledLink to="/posts/notice" className="nav_btn">
+                Notice
+              </StyledLink>
             </Nav.Link>
-            <Nav.Link as={Link} to="/posts/board" className="header_title">
-              Board
+            <Nav.Link>
+              <StyledLink to="/posts/board" className="nav_btn">
+                Board
+              </StyledLink>
             </Nav.Link>
           </Nav>
           <Nav className="right">
-            <Nav.Link as={Link} to="/contact" className="header_title">
-              Contact
+            <Nav.Link>
+              <StyledLink to="/contact" className="nav_btn">
+                ContactMe
+              </StyledLink>
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/"
-              className="header_title"
-              onClick={logoutHandler}
-            >
-              Logout
+            <Nav.Link>
+              <StyledLink to="/" className="nav_btn" onClick={logoutHandler}>
+                Logout
+              </StyledLink>
             </Nav.Link>
           </Nav>
         </Container>

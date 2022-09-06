@@ -1,8 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Header = () => {
   const logoutHandler = () => {

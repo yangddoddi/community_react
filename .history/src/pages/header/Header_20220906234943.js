@@ -1,8 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Header = () => {
   const logoutHandler = () => {
@@ -29,14 +31,9 @@ export const Header = () => {
           </Nav>
           <Nav className="right">
             <Nav.Link as={Link} to="/contact" className="header_title">
-              Contact
+              Contact-Me
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/"
-              className="header_title"
-              onClick={logoutHandler}
-            >
+            <Nav.Link as={Link} to="/" className="header_title">
               Logout
             </Nav.Link>
           </Nav>

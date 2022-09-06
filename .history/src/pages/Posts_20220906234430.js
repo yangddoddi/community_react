@@ -3,6 +3,5 @@ export const Posts = () => {
 };
 
 export const PostList = (prop) => {
-  console.log(prop);
   return <h1>글 목록</h1>;
 };
